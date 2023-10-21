@@ -2,10 +2,13 @@ package com.example.demo.security;
 
 import com.example.demo.models.Person;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
-// метод, который хранит в себе "классические" методы возрата + контроль над учётной записью пользователя
+import java.util.Collections;
+
+// метод, который хранит в себе "классические" методы возрата + контроль над учётной записью пользователя + роли
 public class PersonDetails implements UserDetails {
 
     private final Person person;
@@ -14,9 +17,11 @@ public class PersonDetails implements UserDetails {
         this.person = person;
     }
 
+    //роли
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null; // роли
+        // чтобы Spring Security понимал, что "роли" вообще есть
+        return Collections.singletonList(new SimpleGrantedAuthority(person.getRole()));
     }
 
     @Override
