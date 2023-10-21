@@ -15,7 +15,7 @@ public class Person {
     private String username;
 
     @Column(name = "year_of_birth")
-    private int yeaOfBirth;
+    private int yearOfBirth;
 
     @Column(name = "password")
     private String password;
@@ -24,7 +24,7 @@ public class Person {
 
     public Person(String username, int yeaOfBirth, String password) {
         this.username = username;
-        this.yeaOfBirth = yeaOfBirth;
+        this.yearOfBirth = yeaOfBirth;
         this.password = password;
     }
 
@@ -44,12 +44,12 @@ public class Person {
         this.username = username;
     }
 
-    public int getYeaOfBirth() {
-        return yeaOfBirth;
+    public int getYearOfBirth() {
+        return yearOfBirth;
     }
 
-    public void setYeaOfBirth(int yeaOfBirth) {
-        this.yeaOfBirth = yeaOfBirth;
+    public void setYearOfBirth(int yeaOfBirth) {
+        this.yearOfBirth = yeaOfBirth;
     }
 
     public String getPassword() {
@@ -65,7 +65,7 @@ public class Person {
         return "Person{" +
                 "id=" + id +
                 ", username='" + username + '\'' +
-                ", yeaOfBirth=" + yeaOfBirth +
+                ", yeaOfBirth=" + yearOfBirth +
                 ", password='" + password + '\'' +
                 '}';
     }
